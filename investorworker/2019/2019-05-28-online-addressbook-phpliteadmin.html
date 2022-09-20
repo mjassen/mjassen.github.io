@@ -1,0 +1,148 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="../">up one level</a>
+---
+
+2019-05-28
+
+How to Make an Online Address Book with Installing phpLiteAdmin on Web Hosting
+
+
+By author Morgan Jassen
+
+
+For the first ever post on wieldgadget.com we will be doing a deep-dive style tutorial on how to make an online address book with installing phpLiteAdmin on web hosting. It'll make for a longer post, but it will be an example of how detailed some posts/tutorials here may get!
+
+Why would I want to do this?
+
+An answer could be that I want to have an online address book that I host myself, that since it's online, I can access it from anywhere on the internet, so that I can keep track of my contacts / address book on the go, at home, or in the office.
+
+1.)
+First, download phpLiteAdmin by browsing to https://www.phpliteadmin.org >> Download >> "Download phpLiteAdmin 1.9.7.1"
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_00_download_phpliteadmin.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_00_download_phpliteadmin.png" width="600"></a>
+
+
+2.)
+Next, unzip/decompress the downloaded zip file onto your local computer desktop, which will produce a folder with 3 files -- the main one is "phpliteadmin.php" 
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_01_unzip_phpliteadmin.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_01_unzip_phpliteadmin.png" width="600"></a>
+
+
+3.)
+Next, as the "phpliteadmin.php" file is actually a plaintext file, it is recommended to edit the text file in a plaintext editor, and set a strong password¹ (as the default password² is not very strong).
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_04_create_strong_password.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_04_create_strong_password.png" width="600"></a>
+
+
+4.)
+Next, open the file manager for your organization's web hosting, and upload the "phpliteadmin.php" file.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_02_upload_phpliteadmin.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_02_upload_phpliteadmin.png" width="600"></a>
+
+
+5.)
+Next, we see here that we've uploaded it to "/home/morganja/public_html/phpliteadmin/phpliteadmin.php", which is where we want it in this case.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_03_phpliteadmin_uploaded.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_03_phpliteadmin_uploaded.png" width="600"></a>
+
+
+6.)
+Next, we log in to phpLiteAdmin. In this case we log at http://morganja.wwwss52.a2hosted.com/phpliteadmin/phpliteadmin.php which corresponds to where we uploaded the script. To log-in / access the database area, we type in the strong password that we had set/specified just a minute ago.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_05_log_in.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_05_log_in.png" width="600"></a>
+
+
+7.)
+Next, we create the database.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_06_create_database.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_06_create_database.png" width="600"></a>
+
+
+8.)
+Next, we create a table in the database with two columns (a.k.a. fields) in the table.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_07_create_table_with_two_columns.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_07_create_table_with_two_columns.png" width="600"></a>
+
+
+9.)
+Next, we name the two fields and specify TEXT as the type for both of them. We're making an addressbook to store names + email addresses so we'll name the fields accordingly.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_08_name_and_type_the_fields.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_08_name_and_type_the_fields.png" width="600"></a>
+
+
+10.)
+Next, with the schema having been created, now we can insert some data!
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_09_insert_data_row.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_09_insert_data_row.png" width="600"></a>
+
+
+11.)
+Next, we insert a second row of data!
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_10_insert_data_row_2.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_10_insert_data_row_2.png" width="600"></a>
+
+
+12.)
+Next, let's now view the data by clicking "browse".
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_11_view_data.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_11_view_data.png" width="600"></a>
+
+
+Let's pause here and say we're done at this point. We have our online address book -- it can be used from any web browser -- hooray!
+
+But we'll now describe in a few extra steps, two different ways how to download and export the database or data. One reason we may want to host our own address book, is that we like to "own our own data" and be able to quickly download it and store it as a backup or as a file. 
+
+
+13.)
+Next, what if we want to quickly download the entire database as a single file? Click the [↓] down arrow icon to download the entire database. The format of the database file that phpLiteAdmin uses is "sqlite" database. Pro tip: There are other programs that can open a "sqlite" database file (not just phpLiteAdmin that is), as it is a popular file-based-database format!
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_12_download_sqlite_database_file.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_12_download_sqlite_database_file.png" width="600"></a>
+
+
+14.)
+Next, let's rename the downloaded .sqlite database file. I like to rename the downloaded file with ".sqlite" file extension to make it easy to remember its format.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_13_db_file_is_type_sqlite.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_13_db_file_is_type_sqlite.png" width="600"></a>
+
+
+15.)
+Next, how about exporting the table data that we made in "csv" format, so it is easily openable / readable by a spreadsheet program? (Like Excel or Calc.) To export the table data, click on the database name, then on "Export", then highlight the table name in the list of tables, then choose the "CSV" radio button, then at the bottom click the "Export" button.
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_14_export_as_csv_spreadsheet.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_14_export_as_csv_spreadsheet.png" width="600"></a>
+
+
+16.)
+Finally, after downloading the ".csv" file, we can view it in our preferred spreadsheet app. There's our contact list names of email addresses!
+Screenshot:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_15_open_csv_in_spreadsheet_app.png"><img src="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2019-05-22_07_15_open_csv_in_spreadsheet_app.png" width="600"></a>
+
+
+In conclusion this has been a tutorial on how to make an online address book with installing phpLiteAdmin on web hosting! Thanks for reading!
+
+
+
+¹ Note: This guide only covers very minimum security. For one example, the database example in this blog post is downloadable to anyone who knows its URL/address. Perhaps we'll cover security aspects in a future blog post.
+² The default password of this version of phpLiteAdmin is "admin".
+
+This blog post first published at https://wieldgadget.com/2019/2019-05-28-online-address-book-phpliteadmin
+
+[2018-07-17 Note: This blog post was republished on 2018-07-17 at https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2019/2019-05-28-online-addressbook-phpliteadmin.html ]
+
+</pre>
+

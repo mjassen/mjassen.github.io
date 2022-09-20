@@ -1,0 +1,91 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+<time id="2014-06-26"><a href="?2014-06-26#2014-06-26">2014-06-26</a></time><del> 20:21:29</del>
+
+How to Symmetric Password Encrypt a File on Mac with GPGTools
+GPGServices and then Decrypt it on Windows with Gpg4win Kleopatra
+
+Applicable software versions:
+
+GPG Keychain Access Version 1.1.3 (601) for Mac
+
+Gpg4win Version 2.2.1 for Windows
+
+Kleopatra Version 2.2.0 for Windows
+
+Mac OSX Version 10.9.3
+
+Windows 8.1 Pro N
+
+Prerequisites:
+
+– On the Mac, Install GPGTools for mac
+
+– On the Windows PC, install Gpg4win
+
+Downloads can be found on, or linked to from the GnuPG website:
+<a href=""></a>
+https://www.gnupg.org/
+
+Steps to encrypt the file on Mac:
+
+– On the Mac, on the file wished to be encrypted, choose:
+(control+click) -> Services -> “OpenPGP:Encrypt File”
+
+– On the “Choose Recipients…” Window that comes up, enable
+the “Encrypt with password” checkbox, disable the “Add to
+recipients” checkbox and click OK.
+
+– The “Pinentry Mac” window appears. In the “Passphrase”
+field, create/enter (and remember or safely note) a passphrase.
+Re-enter it when prompted again.
+
+– This will create an encrypted copy of the file, next to the
+original.
+
+Then Send/transfer the encrypted file however you like to the
+Windows PC.
+
+Steps to decrypt the file on Windows PC:
+
+– On the Windows PC, launch Kleopatra and choose “File” ->
+“Decrypt/Verify Files…”
+
+– Browse to the wished-to-be-decrypted file and choose “Open”,
+and in the “Decrypt/Verify Files” window that appears, choose a
+destination folder and click the “Decrypt/Verify” button.
+
+– A “pinentry” window will come up, prompting to enter the
+passphrase that was used to encrypt the file. Enter the passphrase .
+
+– The contents of the wished-to-be-decrypted file will become
+decrypted into the destination folder.
+
+resources:
+
+“How to Decrypt Using GPG”:
+<del>http://www.ehow.com/how_12086521_decrypt-using-gpg.html</del>
+
+“GPG Encryption Guide – Part 4 (Symmetric Encryption)”:
+<a href="http://www.tutonics.com/2012/11/gpg-encryption-guide-part-4-symmetric.html">http://www.tutonics.com/2012/11/gpg-encryption-guide-part-4-symmetric.html</a>
+
+“18 Signing and encrypting files”:
+<a href="http://www.gpg4win.org/doc/en/gpg4win-compendium_24.html">http://www.gpg4win.org/doc/en/gpg4win-compendium_24.html</a>
+
+
+Other resources:
+
+“How to encrypt and sign text or files with GPGServices?”:
+<a href="http://support.gpgtools.org/kb/faq-gpgservices/how-to-encrypt-and-sign-text-or-files-with-gpgservices">http://support.gpgtools.org/kb/faq-gpgservices/how-to-encrypt-and-sign-text-or-files-with-gpgservices</a>
+
+“Decrypting a file using GPG4Win (Kleopatra)”:
+<a href="http://www.puryear-it.com/blog/2013/04/24/decrypting-a-file-using-gpg4win-kleopatra/">http://www.puryear-it.com/blog/2013/04/24/decrypting-a-file-using-gpg4win-kleopatra/</a>
+
+*2014-12-05 edit: previously published at
+http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/?p=128
+
+
+[2020 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2014/... .html.]
+
+</pre>

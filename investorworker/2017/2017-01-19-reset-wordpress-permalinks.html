@@ -1,0 +1,43 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+<time id="2017-01-19"><a href="?2017-01-19#2017-01-19">2017-01-19</a></time>
+<del>2017-01-18</del>
+
+Tags: #working
+
+How to Set WordPress Permalinks Back To The Way They Were
+
+By w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ author <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/about.php?Morgan_Jassen#Morgan_Jassen">Morgan Jassen</a>
+
+(Note: This content was originally published in October 2016 on wordpress.org/support as forum posts authored by me. (see: <a href="https://wordpress.org/support/topic/how-to-set-permalinks-back-to-post-name-and-avoid-404-not-found-error/">https://wordpress.org/support...404-not-found-error/</a> ) This blog post is a condensed re-publishing that highlights the exact problem and fix, and omits unnecessary verbiage. For context and additional details, read the full/original forum post!)
+
+
+Symptom:
+"...
+How do I avoid “404 Not Found” error after having set my permalinks back to “Post name” after having temporarily set them to Plain/Default?
+..."
+
+
+Solution:
+"...
+In short, the fix for me was to go into the WordPress admin dashboard, go to:
+
+“Settings” > “Permalinks” > “Common settings”, and set the radio button to “Custom Structure”
+
+, and paste into the text box:
+
+/index.php/%year%/%monthnum%/%day%/%postname%/
+
+, and click the Save button.
+
+Now, no longer getting 404 error. Symptom resolved!
+...
+Hopefully this can help someone in the future with the exact same question.
+..."
+
+
+[2019-03-11 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2017/... .html.]
+
+</pre>

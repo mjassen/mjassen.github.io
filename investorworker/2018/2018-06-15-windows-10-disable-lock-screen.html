@@ -1,0 +1,31 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+2018-06-15
+
+On Windows 10 Home How to Disable Splash Screen and Show Password Field on Startup (Disable Lock Screen)
+
+by author Morgan Jassen
+
+Compared to Mac OS X that first boots up to the cursor in the login password field, Windows 10 first boots to a splash screen of a picture. (A Lock Screen of a picture) In order to proceed to type a password one must first click or tap somewhere.
+
+After having used Mac and being able to quickly type password... ...the quick way's better.
+
+How to make this happen in Windows 10? Read on...
+
+Searching for: ...windows 10 startup prompt for password no splash screen... and then digging around apparently this is called the Lock Screen. This article did work to make this happen. *Specifically* the part of the article right after the article text "...If you wish, you can also disable the Windows 10 / 8 Lock Screen by editing the Registry Editor. ..." this:
+
+"How to Enable or Disable Windows 10 Lock Screen" <a href="http://www.thewindowsclub.com/disable-lock-screen-windows-8">http://www.thewindowsclub.com/disable-lock-screen-windows-8</a>
+
+In short, here's a working way how to disable the Lock Screen in Windows 10 (Disable the splash screen in Windows 10) here:
+regedit.exe >> HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization >> new DWORD called NoLockScreen >> set value to 1 >> restart Windows
+
+See photo/screenshot at:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2018-06-15-win-10-lock-screen.jpg">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2018-06-15-win-10-lock-screen.jpg</a>
+
+
+[2018-09-01 edit: Moved from https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2018.php?2018-06-15#2018-06-15 to https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/blog2018/2018/06/15/on-windows-10-home-how-to-disable-splash-screen-and-show-password-field-on-startup-disable-lock-screen/ ]
+[2018-Nov. Note: This blog post was republished in November 2018 at https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2018/ ]
+
+</pre>

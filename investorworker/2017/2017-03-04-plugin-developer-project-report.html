@@ -1,0 +1,53 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+<time id="2017-03-04"><a href="?2017-03-04#2017-03-04">2017-03-04</a></time>
+<del>2017-03-03</del>
+
+Final Report for 2017-02-17 WordPress Plugin Developer Work-project
+
+By w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ author <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/about.php?Morgan_Jassen#Morgan_Jassen">Morgan Jassen</a>
+
+This is the "Final Report" for the work project outlined here:
+"Plan for 2017-02-17 WordPress Plugin Developer Volunteer-work-project" (<a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/2017.php?2017-02-11#2017-02-11">http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/2017.php?2017-02-11#2017-02-11</a>)
+
+What happened during the work project, and what did I learn?
+
+- I followed up and/or replied to these threads:
+
+* <a href="https://wordpress.org/support/topic/incompatible-11/#post-8817037">https://wordpress.org/sup...atible-11/#post-8817037</a>
+* "incompatible" <a href="https://wordpress.org/support/topic/incompatible-11/#post-8822597">https://wordpress.org/.../incompatible-11/#post-8822597</a>
+* <a href="https://wordpress.org/support/topic/pulling-images-when-sharing-to-twitter/#post-8836677">https://wordpress.o...pulling-images-when-sharing-to-twitter/#post-8836677</a>
+
+- Then, I still wanted to support this thread: <a href="https://wordpress.org/support/topic/change-date-formatting/">https://wordpress.org/support/topic/change-date-formatting/</a>. And so I finally got zoho mail service (<a href="https://www.zoho.com/workplace/pricing.html?src=zmail">https://www.zoho.com/workplace/pricing.html?src=zmail</a> (at the time of this posting)) configured with my dns provider, so I was able to get an @w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ email address working, and so I was able to get a LinkedIn company (<a href="https://www.linkedin.com/company/11048488">https://www.linkedin.com/company/11048488</a> at the time of this posting) created, and did get the "LinkedIn Company Updates" plugin (company-updates-for-linkedin) running on my dev server and working! However I lost my momentum at that point. (To be continued?...)
+
+Descriptive screenshot 1, of attempted LinkedIn WordPress integration:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_01.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_01.png</a>
+
+
+Descriptive screenshot 2, of attempted LinkedIn WordPress integration:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_02.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_02.png</a>
+
+- Then, I dug into the symptom whereby the gold-price plugin hasn't been working for a couple of weeks, likely because the service that it depends on has been down. I drafted, and then started coding, a plugin to be a "helper plugin" that would pull feeds from yahoo.com's free feed api. Here's a link to the repository where I put this code in its current state: <a href="https://github.com/mjassen/mzz-goldfeed">https://github.com/mjassen/mzz-goldfeed</a> However I did get very bogged down, especially when I saw that yahoo's feed for the XAUUSD=X (gold oz.) csv feed isn't updating at this time, not even daily. So that plugin is now halted for now until I can find a better feed source. However, I did have this complete solution that came out of this mess. This "Cron hello world" plugin that demonstrates WordPress cron. (My gold-price plugin fix/patch was going to depend on WordPress cron) This is a link to the blog post about the complete cron hello world solution: "Mzz-cron-helloworld Plugin to Showcase
+Minimalistic WordPress Cron Functionality" <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/2017.php?2017-03-02#2017-03-02">http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/2017.php?2017-03-02#2017-03-02</a>
+
+Descriptive screenshot 3, of database during attempted Yahoo api WordPress integration:
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_03.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-03-04_03.png</a>
+
+
+- Also, then I culled my rss feed of plugins that I'm following/supporting to these twenty-eight (28) plugins: a-z-listing, comment-notifier, company-updates-for-linkedin, custom-stock-widget, easy-support-videos, gold-price, hookpress, hyperdb, image-widget, import-users-from-csv-with-meta, lockdown-wp-admin, restricted-site-access, simple-local-avatars, simple-map, simple-page-ordering, simple-post-expiration, simple-social-icons, stock-ticker, wp-cron-control, wp-crontrol, wp-event-calendar, wp-rest-api-controller, wp-tab-widget, wp-term-images, wp-user-activity, wp-user-avatars, wp-user-profiles, wps-hide-login
+
+- Then I replied to a couple (one or two) other threads. Overall, it was a week of reading & replying a few threads, doing a lot of coding, and then getting a bit burned out before deciding that I'll need to break and re-group.
+
+Where to go from here? I'm not going to do another "WordPress Plugin Developer Volunteer-work-project" two-week project immediately following this one. I learned a lot, and now it's time for me to step back for a short while, re-focus, and decide what is a good next step to continue on my learning journey!
+
+In conclusion, this has been my Final Report of what happened, and what I learned, during my 2017-02-17 WordPress Plugin Developer Work-project. To some extent, I fizzled out and didn't finish as strongly as I had hoped. However all was not lost. I learned some things about Web Development, and I trust I'll be able to use this knowledge to become a better developer on my next project.
+
+
+[2019-03-11 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2017/... .html.]
+
+</pre>

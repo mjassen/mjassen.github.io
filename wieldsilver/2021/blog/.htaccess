@@ -1,0 +1,5 @@
+Options +Indexes
+IndexIgnore *.old *.bak
+IndexOptions +FancyIndexing
+IndexOptions SuppressLastModified
+IndexOrderDefault Descending Name

@@ -1,0 +1,49 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+<time id="2017-01-18"><a href="?2017-01-18#2017-01-18">2017-01-18</a></time>
+
+tags: #working
+
+How to Unmount Usb Flash Drive on Ubuntu via Keyboard Commands
+
+By w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ author <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/about.php?Morgan_Jassen#Morgan_Jassen">Morgan Jassen</a>
+
+I recently found myself without a mouse temporarily but I needed to remove my usb flash drive immediately before doing anything else. That raised the question:
+
+How to unmount usb flash drive on Ubuntu via keyboard commands?
+
+Here's step-by-step of what did it for me.:
+
+(note, when typing these commands, don't type the words: "user@box:~$ ". That represents the terminal prompt; start typing the command after that. )
+
+1.)
+At terminal prompt, type:
+user@box:~$ mount
+
+, which shows us the following output:
+>"...
+>/dev/sdb1 on /media/SILVERDISKY type vfat...
+>..."
+
+, which shows us where the usb flash drive is mounted. (in this example we see it's at /dev/sdb1 )
+
+2.)
+At terminal prompt, type:
+user@box:~$ udisks --unmount /dev/sdb1
+
+3.)
+At terminal prompt, type:
+user@box:~$ udisks --detach /dev/sdb
+
+That's it! Those are the commands that worked for me to safely unmount usb flash drive on Ubuntu.
+
+sources used:
+<a href="http://stackoverflow.com/a/13224838">http://stackoverflow.com/a/13224838</a>
+<a href="https://ubuntuforums.org/showthread.php?t=841546&p=5267282#post5267282">https://ubuntuforums.org/...post5267282</a>
+
+
+[2019-03-11 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2017/... .html.]
+
+</pre>

@@ -1,0 +1,15 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+2015-02-21
+
+note: originally published 2012-07-26 at a different domain name and url.
+
+I wanted to merge an old lyrics table with a new lyrics table, to form one new complete lyrics table.  At first I thought the best way was to dump the old lyrics table into a .csv file and then import it into the new table.  But the export options that i specified in phpmyadmin always ended in more rows being imported than i knew were there.
+Then, since the old and new lyrics tables are both mysql database tables, i decided to dump the old table in sql format instead.  The lesson i learned is when exporting and importing between mysql tables, use SQL format dump file instead of .csv format dump file.
+However I couldn’t find a way to dump the data into a sql file that didn’t use the table name to reference the table during the import.  So after i dumped the .sql file, I did a find and replace command on the text file to replace instances of the old table name with the new table name.
+
+
+[2019 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2015/... .html.]
+
+</pre>

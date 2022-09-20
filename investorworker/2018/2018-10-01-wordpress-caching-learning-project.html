@@ -1,0 +1,76 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+2018-10-01
+
+September 2018 WordPress Caching Learning Project
+
+By author Morgan Jassen
+
+First, the "Why?" -- why do I want to methodically research about Caching for WordPress?
+
+A: I want my site to be "fast" and less-likely to hit resource limits of traditional "shared hosting", and at the same time I don't want to install something without knowing what its doing. I heard that caching plugins will do the trick, specifically the two setups here, but I want to know more about what they are doing, whether they are improving performance, and if so then how they are doing so.
+
+Basic plan:
+
+Run GTmetrix.com report and Chrome Developer Tools Network tab report, and also file diffs on the WordPress file structure and on WordPress database dump file, on an average WordPress installation (i.e. "i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/blog2018"), before and after enabling these two caching solutions:
+- W3 Total Cache plugin ( <a href="https://wordpress.org/plugins/w3-total-cache/">https://wordpress.org/plugins/w3-total-cache/</a> )
+- "(WP Super Cache + Autoptimize) plugin combination. ( <a href="https://wordpress.org/plugins/wp-super-cache/">https://wordpress.org/plugins/wp-super-cache/</a> + <a href="https://wordpress.org/plugins/autoptimize/">https://wordpress.org/plugins/autoptimize/</a> )"
+
+Findings here:
+(As three sections of bullet-points. Section "I.)" is W3 Total Cache solution -related, Section "II.)" is (WP Super Cache + Autoptimize) solution -related, Section "III.)" is overall observations.)
+
+I.)
+• Enabling W3 Total Cache solution enabled some plugin functionality by default. (In other words, I didn't turn on any checkboxes or settings, and it already made a difference in the GTmetrix scores).
+• W3 Total Cache solution improved Chrome Inspector Network tab load time for at least one page.
+• W3 Total Cache solution improved a GTmetrix PageSpeed Score from B(86%) to A(98%).
+• W3 Total Cache solution improved a GTmetrix YSlow Score from C(74%) to A(92%).
+• W3 Total Cache solution improved a GTmetrix Page Fully Loaded Time from 1.8s to 1.5s.
+• W3 Total Cache solution improved a GTmetrix PageSpeed recommendation Enable gzip compression Grade from F(13) to A(100).
+• W3 Total Cache solution improved a GTmetrix YSlow recommendation Add Expires headers Grade from F(23) to B(89).
+• W3 Total Cache solution improved a GTmetrix YSlow recommendation Compress components with gzip Grade from F(23) to A(100)
+• W3 Total Cache solution improved a GTmetrix YSlow recommendation Configure entity tags (ETags) Grade from F(34) to A(100)
+• W3 Total Cache solution added some things called '...transients...plugin..' related stuff in the wp_options database table.
+• W3 Total Cache solution added: /wp-content/cache/
+• W3 Total Cache solution added: /wp-content/w3tc-config/
+• W3 Total Cache solution added: /wp-content/advanced-cache.php
+• W3 Total Cache solution added: /wp-content/plugins/w3-total-cache/
+• W3 Total Cache solution modified: /wp-config.php to add the line: "define('WP_CACHE', true);"
+• W3 Total Cache solution heavily modified: /.htaccess and added dozens of lines of code regarding "...IfModule..." for: 1.) mod_mime.c, 2.) mod_expires.c, 3.) mod_deflate.c, and 4.) mod_headers.c.
+• Understood the above four may help handle respectively to: 1.) Help browser handle file types correctly, 2.) Tell browsers (how/)to cache the website/resources, 3.) Enable gzip compression (data compression), and 4.) Control(/disable) ETags and cache expiration, and set creation times.
+
+II.)
+• Enabling (WP Super Cache + Autoptimize) solution enabled seemingly didn't enable any plugin functionality by default, as indicated by an initial GTmetrix test not resulting in any improvements. Thus after installing and realizing this, for WP Super Cache, in its settings, I did immediately go and set the "Caching" radio button to "Caching On (Recommended)" and click the "Update Status" button. (the "Caching" radio button upon installation had been set to "Caching Off" out of the box) And thus furthermore after installing Autoptimize, in its settings, I did immediately go and find, and set, the following: 1.) HTML Options >> (enable the "Optimize HTML Code?" checkbox) 2.) JavaScript Options >> (enable the "Optimize JavaScript Code?" checkbox) 3.) CSS Options >> (enable the "Optimize CSS Code?" checkbox) 4.) (Then click "Save Changes" button.)
+• (WP Super Cache + Autoptimize) solution improved Chrome Inspector Network tab load time for all tested pages (e.g. from ~600-2300ms to ~350-450ms)
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix PageSpeed Score from B(86%) to B(89%).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix YSlow Score from C(74%) to B(87%).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix Page Fully Loaded Time from 1.8s to 1.4s.
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix PageSpeed recommendation Enable gzip compression Grade from F(13) to F(37).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix YSlow recommendation Add Expires headers Grade from F(23) to D(67).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix YSlow recommendation Compress components with gzip Grade from F(23) to D(67).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix YSlow recommendation Use a Content Delivery Network(CDN) Grade from F(40) to D(60).
+• (WP Super Cache + Autoptimize) solution improved a GTmetrix YSlow recommendation Configure entity tags (ETags) Grade from F(34) to E(56).
+• Adding the W3 Total Cache solution did affect the WordPress database in at least three ways: 1.) There were entries from/relating-to cron in the wp_options table. In other words I suspect that (WP Super Cache + Autoptimize.) set/use WordPress cron jobs, 2.) There were added some things called ..._site_transient_... related stuff in the wp_options database table. (so, similar to W3 Total Cache), and 3.) There were added some more things to the wp_options table. For just a couple examples: `...autoptimize_css_exclude...` and `...wpsupercache_start...` and `...ossdl_off_blog_url...`, (but many more). (not sure what these more things do, so thinking of them as plugin-specific plugin-y stuff.)
+• (WP Super Cache + Autoptimize) solution added: /wp-admin/meta/
+• (WP Super Cache + Autoptimize) solution added: /wp-content/cache/
+• (WP Super Cache + Autoptimize) solution added: /wp-content/plugins/autoptimize/
+• (WP Super Cache + Autoptimize) solution added: /wp-content/plugins/wp-super-cache/
+• (WP Super Cache + Autoptimize) solution added: /wp-content/advanced-cache.php
+• (WP Super Cache + Autoptimize) solution added: /wp-content/wp-cache-config.php
+• (WP Super Cache + Autoptimize) solution modified: /wp-config.php to add the lines: '...define('WP_CACHE', true);...' and '...define( 'WPCACHEHOME', '/home/morganja/i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/blog2018/wp-content/plugins/wp-super-cache/' );...'
+
+III.)
+• The W3 Total Cache solution filebase is twice the size (MB filesize) than the (WP Super Cache + Autoptimize) solution filebase. And more file count too. In other words the former could be called "heavier" than the latter. Which could line up with what was seen in the files diffs.
+• The W3 Total Cache solution modified the .htaccess file heavily, where the (WP Super Cache + Autoptimize) solution didn't modify .htaccess file at all.
+• Adding the W3 Total Cache solution much more dramatically improved the GTmetrix reports high-level "Score"/"Grade". (e.g. moved more elements to become "A" grade/score) when compared to adding the (WP Super Cache + Autoptimize) solution.
+• The (WP Super Cache + Autoptimize) solution apparently improved the Chrome Inspector Network tab load times for all pages, whereas these load times for the W3 Total Cache solution had mixed results.
+• Both solutions reportedly shaved many hundreds of milliseconds off the GTmetrix Page Fully Loaded Time.
+• The W3 Total Cache solution upon installing and enabling the plugin has (some of its) plugin functionality enabled by default, assumed its base/core functionality. Compared to the (WP Super Cache + Autoptimize) solution which upon installing and enabling seemingly didn't have any functionality enabled at all, until one turned on some radio buttons and checkboxes.
+• Both plugins use a setting in the wp-config.php file called "define('WP_CACHE', true)" which apparently is a legacy option. At this time it may just be an old convention.
+
+In conclusion, I learned some things and stuff about WordPress, caching, W3 Total Cache plugin, WP Super Cache + Autoptimize plugins, but I still know relatively little about them. However I do want to decide whether or not to use one of the solutions on my blog site, and why. I almost want to say I will use the (WP Super Cache + Autoptimize) solution in place on my site because it has a smaller filebase and more granular control, it doesn't clutter the site's .htaccess file, and it causes a many-hundreds-millisecond improvement in page load times, both according to Chrome Inspector Network tab tests and according to GTmetrics page load time report. Buuuuut, Instead I'm going with the W3 Total Cache solution. Why? One big selfish reason is the A2 Optimized WP plugin ( <a href="https://wordpress.org/plugins/a2-optimized-wp/">https://wordpress.org/plugins/a2-optimized-wp/</a> ) leverages the W3 Total Cache plugin inside of it, and I currently work for A2 Hosting so by running it on any site, I think the result is I'll be able to learn more about it. But other than that, it's not a bad choice -- the W3 Total Cache does nifty tricks in the .htaccess file of a site, does reportedly increase page load times and also improve GTmetrix report scores! So I'll be going with it for now.
+
+Note: This post was pre-published on Sept 22, 2018.
+[2018-Nov. Note: This blog post was republished in November 2018 at https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2018/ ]
+</pre>

@@ -1,0 +1,29 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+2015-02-10
+
+note: originally published 2012-07-30 at a different domain name and url.
+
+How to make your own copy of a dual language chinese/english dictionary using phpmyadmin
+
+I made my own copy of a dual language, traditional chinse to english dictionary by starting with the pydict dictionary entries from here: <a href="http://sourceforge.net/projects/pydict/">http://sourceforge.net/projects/pydict/</a>.  (the dictionary entries are in the “a.lib, b.lib, c.lib…” source files.), and an additional few thousand dictionary entries (translations, really) from the “phpMyAdmin-master-latest.tar.bz2” download here: “http://www.phpmyadmin.net/home_page/downloads.php” (the translations are in the “\po\zh_TW.po” location, once it is unzipped).
+
+The way I did this was to use ms office excel and openoffice.org scalc to format the .lib files and the export of the .po files into utf-8 .csv files, and then used the import command in phpmyadmin, with the “csv using LOAD DATA” radio button enabled, to import the files into the schema defined below:
+
+CREATE DATABASE `EnZhDictUtf8` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `EnZhDictUtf8`;
+
+CREATE TABLE IF NOT EXISTS `words` (
+`en_word` text NOT NULL,
+`zh_word` text NOT NULL,
+`phonetics` text NOT NULL,
+`source` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+Now when i want to know the traditional chinsese word equivalent to an english word (or vice versa), i just have to use phpmyadmin’s search function to look it up.  Much faster than using a paper dictionary.  Since I don’t know how to make my new PC hardware run bv1al linux with pydict, this is a great replacement dictionary.  Now you can make one yourself; enjoy.
+
+
+[2019 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2015/... .html.]
+
+</pre>

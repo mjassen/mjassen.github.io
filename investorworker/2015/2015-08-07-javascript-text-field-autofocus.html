@@ -1,0 +1,41 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+2015-08-07
+
+HTML Form With JavaScript – How to Make the First Text Field Autofocus
+
+I’m happy that I was able to make my html form autofocus the first field by default. with JavaScript.
+
+In my case, for my mzz-cases-notes.php form, what this meant is three changes:
+( Note: my mzz-cases-notes.php form is hosted at https://github.com/mjassen/mzz-cases-notes )
+
+1.
+I added this between the head tags, just before the closing head tag:
+&lt;script type="text/javascript"&gt;
+function FocusOnInput()
+{
+document.getElementById("description").focus();
+}
+&lt;/script&gt;
+
+2.
+I added to the opening body tag, to make this:
+&lt;body onload="FocusOnInput()"&gt;
+
+3.
+I added this in the HTML/PHP code for the form’s text field:
+echo "&lt;input type=’text’ name=’".$result[$i][1]."’
+id=’".$result[$i][1]."’ style=’width:250px;’/&gt; ";
+
+The Link to the commit with the change: <a href="https://github.com/mjassen/mzz-cases-notes/blob/eef80f53f8492ad806b8ef1440df8d1d9495a833/mzz-cases-notes.php">https://github.com/mjassen/mzz-ca...33/mzz-cases-notes.php</a>
+
+That’s how I I was able to make my html form autofocus the first field by default.
+
+References: I used this stackoverflow example to help me along the way:
+<a href="http://stackoverflow.com/questions/3383429/setting-focus-on-an-html-input-box-on-page-load">http://stackoverflow.com/questio...-on-page-load</a>
+
+
+[2019 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2015/... .html.]
+
+</pre>

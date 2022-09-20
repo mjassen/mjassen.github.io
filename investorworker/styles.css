@@ -1,0 +1,47 @@
+@import 'https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Montserrat:400,700';
+
+.mo-bodywrap {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 50px;
+	
+/*	font-size: 25px;
+	line-height: 33px;	*/
+	color: rgb(26, 26, 26);
+	font-family: Merriweather,Georgia,serif;
+}
+
+pre {
+	white-space: pre-wrap;       /* css-3 */
+/*	font-size: 25px;
+	line-height: 33px;	*/
+	color: rgb(26, 26, 26);
+	font-family: Merriweather,Georgia,serif;
+}
+
+a:active, a:hover, a:visited, a:link {
+	color: rgb(104, 104, 104);
+	text-decoration: none;
+} 
+a:hover {
+	color: black;
+	text-decoration: none;
+} 
+
+time {
+color: rgb(104, 104, 104);
+font-family: Montserrat,"Helvetica Neue",sans-serif;
+font-size: 35px;
+/*line-height: 44px;	*/
+}
+
+div.mzz-fixed {
+    position: fixed;
+    top: 50%;
+    left: 5px;
+    border: 1px solid gray;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+

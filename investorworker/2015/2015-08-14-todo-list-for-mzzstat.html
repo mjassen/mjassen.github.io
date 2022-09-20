@@ -1,0 +1,30 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+<time id="2015-08-14"><a href="?2015-08-14#2015-08-14">2015-08-14</a></time>
+
+To-Do List for Mzzstat WordPress Plugin
+
+As written in Mzzstat Site Stats Plugin for a WordPress Site ( <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ /2015.php?2015-08-10#2015-08-10">http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/2015.php?2015-08-10#2015-08-10</a> <del>http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/?p=1143</del> ), I put the initial code of the Mzzstat WordPress plugin on github, and not only that, but put it there early. Now I’ve got to try to release updates often to make sure the plugin is the best it can be, to fix bugs, make code optimizations, and make feature improvements.
+
+In other words, by releasing early with a minimally-functioning version, I know that due to the early and quick release of code, unbeknownst to me there could be bugs in there and there might be a lot of room for improvement. However, I believe that in order to get better and improve myself, I need to publish something– I needed to have published the best, most complete code that I have at the time (along the lines of It’s Okay To Write Bad Code ( <a href="http://halfelf.org/2015/okay-write-bad-code/">http://halfelf.org/2015/okay-write-bad-code/</a> )), and then quickly iterate to improve it, so that overall, my project quickly comes to represent the corollary of the previous idea, in other words it manifests the idea of Don’t Publish Bad Code ( <a href="http://halfelf.org/2015/dont-publish-bad-code/">http://halfelf.org/2015/dont-publish-bad-code/</a> ).
+
+Here’s the link to the current revision at the time of this blog post writing: <a href="https://github.com/mjassen/mzz-stat/tree/b9bda5626e20127659044a08fef279ee375bae1b">https://github.com/mjassen/mzz-stat/...5bae1b</a>
+
+It’s been some days since the current revision was released. I’ve had time to think of a concrete list of improvements. Here’s an early list of most important to-dos at this time:
+
+1. Add a changelog file and start writing the changes there as I do them.
+2. Remove hard-coded PHP MySQL database calls, replacing them instead with native WordPress MySQL database calls.
+3. Add proper plugin install logic and proper plugin removal login, including code to install and remove the database table and data.
+4. i18n — Internationalize by adding code to reference .po file(s), and add English language translation .po file and Traditional Chinese language translation .po file.
+5. WPMU support — add logic to allow this plugin to run and support a network install of WordPress.
+6. Remove front-end shortcode feature; instead move it to a dashboard area where an admin can view the stat(s). The reason is that the user of this plugin is envisioned to be the WordPress site admin and not a site visitor.
+7. In addition to the total site visitors that now can be displayed, while it’s moved to the admin area, let’s also display a per-month and per-day visit count breakdown.
+8. In the proposed admin stats area, let’s display a list of which URIs the visitor visited. (this is already captured, now let’s display it to the admin)
+
+These are the most pressing improvements and fixes. I’ll aim to improve these areas.
+
+
+[2019 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2015/... .html.]
+
+</pre>

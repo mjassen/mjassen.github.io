@@ -1,0 +1,141 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+
+<time id="2017-01-28"><a href="?2017-01-28#2017-01-28">2017-01-28</a></time>
+<del>2017-01-27</del>
+
+How to Internationalize and Localize a WordPress Plugin
+
+By w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶ author <a href="http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/about.php?Morgan_Jassen#Morgan_Jassen">Morgan Jassen</a>
+
+Applies to: WordPress v.4.7.2
+
+This post is a step-by-step guide how to internationalize and localize (internationalize and translate) a WordPress Plugin.
+
+I was inspired by this forum topic: "Language translation" <a href="https://wordpress.org/support/topic/language-translation-26">https://wordpress.org/support...translation-26</a>.
+
+When troubleshooting the issue, at first it seemed that the plugin was already internationalized. But looking closer it was symptomatic -- wasn't working. I wished that I had a very simple, "Hello World"-style, internationalized and localized, WordPress Plugin to see what is the minimum that is needed to make it work. Resources that I used are linked at the bottom of this article -- I'm glad for them, as I needed them to figure this out, so thanks to the authors and publishers of those resources.
+
+So here it is -- step-by-step how to add internationalization and localization to a WordPress Plugin.
+
+As a starting point, we'll be using the "mzz-helloworld" WordPress plugin.
+
+
+Step 1.)
+Download, install, and activate the "mzz-helloworld" plugin. (<a href="https://github.com/mjassen/mzz-helloworld">https://github.com/mjassen/mzz-helloworld</a>).
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-install-helloworld.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-install-helloworld.png</a>
+
+
+Step 2.)
+Create a folder called "languages" in the plugin's root directory, like so:
+...wp-content/plugins/mzz-helloworld/languages/"
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-create-languages-folder.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-create-languages-folder.png</a>
+
+
+Step 3.)
+In ...wp-content/plugins/mzz-helloworld/mzz-helloworld.php, immediately below the Plugin Header, (so on line 8 in our case, add a "...textdomain..." line, like this:
+
+load_plugin_textdomain('mzz-helloworld', false, plugin_basename(dirname(__FILE__)). '/languages');
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-add-textdomain.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-add-textdomain.png</a>
+
+
+Step 4.)
+In ...wp-content/plugins/mzz-helloworld/mzz-helloworld.php, on line 12 in our case, add a call to the "__()" function, with the string as the fist parameter and the textdomain ("mzz-helloworld" in our case) as the second parameter. So, before, it was like this:
+...
+	echo "Hello, Mzz World!";
+...
+
+, but after, it looks like this:
+...
+	echo __("Hello, Mzz World!", 'mzz-helloworld');
+...
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-call-textdomain-function.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-call-textdomain-function.png</a>
+
+
+Great! We're done internationalizing the plugin. In other words, the code is ready. Now it's time to move ahead and localize (translate) the plugin strings. We're deciding to localize this plugin into Brazilian Portugese language. So next, we'll create new .po and .mo files.
+
+
+Step 5.)
+(Step 5 is a long one, with multiple screenshots)
+
+We're creating new .po and .mo files that will hold the localizations (hold the translations).
+
+- We can create the .po file from a blank .pot file. Get a blank new .pot file. For example, download a copy of the "Blank-WordPress.pot" file from <a href="https://raw.githubusercontent.com/fxbenard/Blank-WordPress-Pot/0e228ff22ff83bef5b340964b61fcc35cb0993c9/Blank-WordPress.pot">https://raw.githubusercontent.com/fxbenard...pot</a>. Save the "Blank-WordPress.pot" file somewhere convenient like on your desktop.
+
+- Then Launch Poedit program and choose "File" -> "New catalog from POT file...", browse to that "Blank-WordPress.pot" file. Opening the .pot file will have caused the "Settings" screen to appear, populated with default settings. Click OK.
+
+Descriptive screenshots:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-open-pot-file.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-open-pot-file.png</a>
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-poedit-click-ok.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-poedit-click-ok.png</a>
+
+
+- In the "Save as..." window that comes up next, name the new file "mzz-helloworld-pt_BR.po", and save it into the /languages folder, like so:
+...wp-content/plugins/languages/mzz-helloworld-pt_BR.po
+(we use the "pt_BR" code because we've decided we want to translate the plugin to Brazilian Portugese.)
+
+
+- When we save/create the .po file, Poedit program automatically creates the corresponding .mo file for us.
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-save-create-po-file.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-save-create-po-file.png</a>
+
+
+- Next, still in Poedit program, from the menu choose: "Catalog" -> "Update from sources". The program goes and finds all the strings that we had marked with "__()" in the previous step.
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-update-from-sources.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-update-from-sources.png</a>
+
+
+Step 6.)
+Next, we'll translate the text strings. In Poedit program, type the corresponding translation for each line. In our case, we only have one line, "Hello, Mzz World!". So we'll type the translation in there as "Olá, Mzz World!". Click Save, and close Poedit.
+
+Descriptive screenshot:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-translate-it.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-translate-it.png</a>
+
+
+Step 7.)
+That's It! Congratulations, we're done localizing the plugin, which means we're done internationalizing and localizing it.
+
+A final tip, to see the the plugin localized it in our language, of course, we'll need to have told WordPress to use Brazilian Portugese as the Site Language.
+
+- In the WordPress Admin Dashboard, set "Settings" -> "General" -> "Site Language" to be "Português do Brasil", and click "Save Changes".
+
+Descriptive screenshots:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-change-site-language.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-change-site-language.png</a>
+
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-finished.png">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28-finished.png</a>
+
+
+In conclusion, this post has been a step-by-step guide how to internationalize and localize (internationalize and translate) a WordPress Plugin.
+
+[
+2017-01-30 Update: Here is a link to the final (internationalized and localized) version of the mzz-helloworld plugin:
+<a href="https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28_mzz-helloworld.zip">https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/uploads/2017-01-28_mzz-helloworld.zip</a>
+]
+
+Resources:
+* <a href="https://www.bing.com/search?q=wordpress+plugin+internationalization+hello+world">https://www.bing.com/search?q=wor...+world</a>
+* <a href="https://codex.wordpress.org/I18n_for_WordPress_Developers">https://codex.wordpress.org/..._Developers</a>
+* <a href="https://www.smashingmagazine.com/2011/12/internationalizing-localizing-wordpress-theme/">https://www.smashingmagazine.com/2011/...-theme/</a>
+* "Import users from CSV with meta" (WordPress Plugin) (This plugin is internationalized and localized in a way that works, so I was able to learn from it) <a href="https://wordpress.org/plugins/import-users-from-csv-with-meta/">https://wordpress.org/plugins/import-users-from-csv-with-meta/</a>
+* Professional WordPress Design and Development (book) (Chapter 8 - Plugin Development) , by Damstra, Stern, and Williams. (Wrox; 3 edition (January 12, 2015)) ISBN-13: 978-1118987247 (<a href="https://www.amazon.com/Professional-WordPress-Development-Brad-Williams/dp/1118987241">https://www.amazon.com/Professional-Word...7241</a>)
+* <a href="https://www.bing.com/search?q=WordPress+Blank+Pot">https://www.bing.com/search...+Blank+Pot</a>
+* <a href="https://github.com/fxbenard/Blank-WordPress-Pot/tree/0e228ff22ff83bef5b340964b61fcc35cb0993c9">https://github.com/fxbenard/Blank-WordPress-...0993c9</a>
+* <a href="https://codex.wordpress.org/Writing_a_Plugin">https://codex.wordpress.org/Writing_a_Plugin</a>
+* <a href="https://codex.wordpress.org/Plugin_Resources">https://codex.wordpress.org/Plugin_Resources</a>
+* <a href="http://wpninjas.com/how-to-create-a-simple-wordpress-plugin/">http://wpninjas.com/how-to-create-a-simple-wordpress-plugin/</a>
+
+
+[2019-03-11 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2017/... .html.]
+
+</pre>

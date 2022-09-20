@@ -1,0 +1,73 @@
+﻿<pre style="white-space: pre-wrap;">
+<a href="./">up one level</a>
+---
+<time id="2014-05-08"><a href="?2014-05-08#2014-05-08">2014-05-08</a></time> <del>08:50:34</del>
+
+Description of how I installed CrazyStat on WordPress 3.9
+
+I uploaded the CrazyStat ‘stat’ directory into the root of my WordPress directory. (So now in my WordPress website directory I have the ‘stat’ folder alongside of the other folders (alongside ‘wp-admin’ folder, etc.)
+
+Now I needed to paste the CrazyStat code in the footer file of my WordPress theme (as per this blog post: <a href="http://blog.christosoft.de/2012/04/how-to-include-crazystat-in-wordpress/">http://blog.christosoft.de/2012/04/how-to-include-crazystat-in-wordpress/</a> )
+
+*but* I don’t want my footer.php file to get overwritten when I update WordPress. So I want to put it in a child theme.
+
+So I get the help of this tutorial:
+<a href="http://codex.wordpress.org/Child_Themes">http://codex.wordpress.org/Child_Themes</a>
+
+So next to my Twenty Fourteen theme ( ‘/wp-content/themes/twentyfourteen’ ), I created a new child theme by
+making a new folder for the child theme, and I decide to call it twentyfourteenchildtheme. So like this:
+‘/wp-content/themes/twentyfourteenchildtheme’.
+
+And in the twentyfourteenchildtheme I create only two files: footer.php and style.css.
+
+The contents of style.css is this which I got from that codex.wordpress.org link above:
+
+/*
+
+Theme Name: Twenty Fourteen Child
+
+Theme URI: http://example.com/twenty-fourteen-child/
+
+Description: Twenty Fourteen Child Theme
+
+Author: John Doe
+
+Author URI: http://example.com
+
+Template: twentyfourteen
+
+Version: 1.0.0
+
+Tags: light, dark, two-columns, right-sidebar,
+responsive-layout, accessibility-ready
+
+Text Domain: twenty-fourteen-child
+
+*/
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+
+————————————————————– */
+
+
+And the contents of footer.php is the footer.php copied from the twentyfourteen theme, but with the CrazyStat line (two lines actually, although the "&lt;?php @include_once("stat/src/include.php"); ?&gt;" is the only necessary one) added near the bottom:
+
+[See: <a href="../uploads/2014-05-08_01.html">../uploads/2014-05-08_01.html</a> ]
+
+And that’s it. (I didn’t have to change anything in the ‘stat’ directory or its subfolders)
+
+I did for security reasons want to change the CrazyStat directory away from the default of ‘stat’, however, I tried and something went wrong, so I ended up just using the default of CrazyStat directory name of ‘stat’.
+
+And now I can login to "http://(my web site .com)/stat" and see if, and how many, people are visiting my WordPress website!
+
+Finally, Thank you to WordPress and CrazyStat people.
+
+*2014-12-05 edit: previously published at
+http://w̶i̶e̶l̶d̶l̶i̶n̶u̶x̶.̶c̶o̶m̶/?p=103
+
+
+[2020 edit: Moved to: https://i̶n̶v̶e̶s̶t̶o̶r̶w̶o̶r̶k̶e̶r̶.̶c̶o̶m̶/2014/... .html.]
+
+</pre>
