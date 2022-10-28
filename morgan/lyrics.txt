@@ -1,4 +1,5 @@
-﻿2100_王若琳_有你的快樂_JoannaWang_YoureHappy.txt
+2100_王藍茵_惡作劇.txt
+2100_王若琳_有你的快樂_JoannaWang_YoureHappy.txt
 2100_張惠妹_我最親愛的_AMei_MyLovely.txt
 2100_國語流行金曲 伴唱 集 (2006-2015).txt
 2100_周杰倫_簡單愛_SimpleLove_JayChou.txt
@@ -167,7 +168,6 @@
 2020-01-26_戴佩妮_時間快轉.txt
 2019-10-14_蔡依林_說愛你.txt
 2019-10-14_空白格_蔡健雅.txt
-2019-10-14_王藍茵_惡作劇.txt
 2019-10-14_梁靜茹_沒有如果.txt
 2019-10-14_梁靜茹_情歌.txt
 2019-10-14_S.H.E_愛就對了LoveSoRight.txt
