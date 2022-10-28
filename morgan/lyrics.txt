@@ -2,7 +2,7 @@
 2100_G.E.M.鄧紫棋【透明Selfless】
 2100_王藍茵_惡作劇.txt
 2100_王若琳_有你的快樂_JoannaWang_YoureHappy.txt
-2100_張惠妹_我最親愛的_AMei_MyLovely.txt
+2100_我最親愛的 - 張惠妹_AMei_MyLovely
 2100_國語流行金曲 伴唱 集 (2006-2015).txt
 2100_周杰倫_簡單愛_SimpleLove_JayChou.txt
 2100_TheWeeknd_SaveYourTears.txt
@@ -58,8 +58,6 @@
 2022-10-28-0231 —-Colombia, Mi Encanto — Encanto cast
 2022-10-28-0230 —-Break my soul -  Beyoncé
 2022-10-28-0229 —-shivers- Ed sheeran 
-2022-10-28-0228 —- 微加幸福 - 郁可唯 小資女孩向前衝 episode tail song 片尾曲 
-2022-10-28-0227 —- 不要不要 - 卓文萱 小資女孩向前衝 office girls 片頭曲 intro song 
 2022-10-28-0226 —- All Is Found — frozen II cast
 2022-10-28-0225 —— this will all makes sense when I am older — frozen II cast
 2022-10-28-0224 —- defying gravity — wicked cast
@@ -67,7 +65,6 @@
 2022-10-28-0222 la vida loca - ricky martin fame
 2022-10-28-0221 defying gravity – wicked cast Idina Menzel
 2022-10-28-0220 Who Knew - Pink
-2022-10-28-0218 我最親愛的 - 張惠妹
 2022-10-28-0217 Fridge - S.H.E
 2022-10-28-0216 Price To Pay - Lucinda Williams
 2022-10-28-0214 what a man a mighty mighty good man
@@ -339,3 +336,5 @@
 1900_2022-07-25_GunsNRoses_SweetChildOMine.txt
 1900_2022-07-09_JustinTimberlake_CryMeARiver.txt
 1900_2021-10-16_MoanaCast_YourWelcome.txt
+1900_ —- 微加幸福 - 郁可唯 小資女孩向前衝 episode tail song 片尾曲 
+1900 —- 不要不要 - 卓文萱 小資女孩向前衝 office girls 片頭曲 intro song 
