@@ -1,0 +1,5 @@
+# Start mo added snippet to force https on non-wordpress pages
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://bitsycard.com/$1 [R,L]
+# End mo added snippet to force https on non-wordpress pages
